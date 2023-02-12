@@ -31,7 +31,7 @@ func findFile(targetDir string, pattern []string) []string {
 	return patternMatch
 }
 
-// Converts the file data into map that can consumed to create a k8s resource
+// Converts the file data into map that can be consumed to create a k8s resource
 func cmdatamap(filelist []string) map[string]string {
 
 	cmdata := make(map[string]string)
