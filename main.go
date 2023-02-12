@@ -4,18 +4,17 @@ import (
 	"context"
 	"fmt"
 	"io/ioutil"
-	"log"
-	"strings"
-
-	"os"
-	"path/filepath"
-
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/client-go/kubernetes"
 	"k8s.io/client-go/tools/clientcmd"
+	"log"
+	"os"
+	"path/filepath"
+	"strings"
 )
 
+// This func returns the list of files that needs to be updated from a target directory
 func findFile(targetDir string, pattern []string) []string {
 	var patternMatch []string
 	for _, v := range pattern {
@@ -32,6 +31,7 @@ func findFile(targetDir string, pattern []string) []string {
 	return patternMatch
 }
 
+// Converts the file data into map that can consumed to create a k8s resource
 func cmdatamap(filelist []string) map[string]string {
 
 	cmdata := make(map[string]string)
