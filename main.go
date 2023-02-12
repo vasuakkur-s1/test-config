@@ -55,7 +55,7 @@ func main() {
 	//Directory in which the config files are present
 	targetDirectory := "/Users/vasudev.akkur/src/scalyr-config/config/"
 
-	//Takes the list of files names that needs to updated in configmap
+	//Takes the list of files names that needs to be updated in configmap
 	fileName := []string{"worker", "atlantis"}
 
 	//Generates a slice string on configs that needs to be updated.
